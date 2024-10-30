@@ -62,3 +62,9 @@
 .coding-bunny-select-show-desktop {
     width: 100px; /* Set width to 100 pixels */
 }
+
+/* Non editable fields */
+.non-editable {
+    pointer-events: none;
+    opacity: 0.5;
+}

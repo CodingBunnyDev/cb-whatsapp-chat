@@ -111,42 +111,44 @@ function coding_bunny_whatsapp_settings_page() {
             </table>
 
             <!-- Visibility Settings -->
-            <table class="form-table">
-                <hr>
-                <h3><b><?php esc_html_e( "Visibility", 'coding-bunny-whatsapp-chat' ); ?></b></h3>
-                <tr valign="top">
-                    <th scope="row"><?php esc_html_e( "Days of Week", 'coding-bunny-whatsapp-chat' ); ?></th>
-                    <td>
-                        <?php
-                        // Days of the week array
-                        $days = [
-									'monday'    => esc_html__( 'Monday', 'coding-bunny-whatsapp-chat' ),
-									'tuesday'   => esc_html__( 'Tuesday', 'coding-bunny-whatsapp-chat' ),
-									'wednesday' => esc_html__( 'Wednesday', 'coding-bunny-whatsapp-chat' ),
-									'thursday'  => esc_html__( 'Thursday', 'coding-bunny-whatsapp-chat' ),
-									'friday'    => esc_html__( 'Friday', 'coding-bunny-whatsapp-chat' ),
-									'saturday'  => esc_html__( 'Saturday', 'coding-bunny-whatsapp-chat' ),
-									'sunday'    => esc_html__( 'Sunday', 'coding-bunny-whatsapp-chat' ),
-								];
-                        foreach ( $days as $key => $day ) {
-                            $checked = in_array( $key, $selected_days ) ? 'checked' : ''; // Check if the day is selected
-                            $disabled = !$licence_active ? 'disabled' : ''; // Disable if the licence is not active
-                            echo "<label><input type='checkbox' name='coding_bunny_whatsapp_settings[visible_days][]' value='" . esc_attr( $key ) . "' $checked $disabled /> " . esc_html( $day ) . "</label><br/>";
-                        }
-                        ?>
-                        <p class="description"><?php esc_html_e( 'Select the days of the week on which to display the WhatsApp button.', 'coding-bunny-whatsapp-chat' ); ?></p>
-                    </td>
-                </tr>
+<table class="form-table">
+    <hr>
+    <h3><b><?php esc_html_e( "Visibility", 'coding-bunny-whatsapp-chat' ); ?></b></h3>
+    <tr valign="top">
+        <th scope="row"><?php esc_html_e( "Days of Week", 'coding-bunny-whatsapp-chat' ); ?></th>
+        <td>
+            <?php
+            $days = [
+                'monday'    => esc_html__( 'Monday', 'coding-bunny-whatsapp-chat' ),
+                'tuesday'   => esc_html__( 'Tuesday', 'coding-bunny-whatsapp-chat' ),
+                'wednesday' => esc_html__( 'Wednesday', 'coding-bunny-whatsapp-chat' ),
+                'thursday'  => esc_html__( 'Thursday', 'coding-bunny-whatsapp-chat' ),
+                'friday'    => esc_html__( 'Friday', 'coding-bunny-whatsapp-chat' ),
+                'saturday'  => esc_html__( 'Saturday', 'coding-bunny-whatsapp-chat' ),
+                'sunday'    => esc_html__( 'Sunday', 'coding-bunny-whatsapp-chat' ),
+            ];
+            $non_editable_class = !$licence_active ? 'non-editable' : '';
 
-                <!-- Display Time Settings -->
-                <tr valign="top">
-                    <th scope="row"><?php esc_html_e( "Display time", 'coding-bunny-whatsapp-chat' ); ?> </th>
-                    <td>
-                        <input type="time" name="coding_bunny_whatsapp_settings[start_time]" value="<?php echo esc_attr( $start_time ); ?>" class="coding-bunny-input-time" <?php echo !$licence_active ? 'disabled' : ''; ?> />
-                        <input type="time" name="coding_bunny_whatsapp_settings[end_time]" value="<?php echo esc_attr( $end_time ); ?>" class="coding-bunny-input-time" <?php echo !$licence_active ? 'disabled' : ''; ?> />
-                        <p class="description"><?php esc_html_e( 'Set the time slot in which you wish to display the WhatsApp button.', 'coding-bunny-whatsapp-chat' ); ?> </p>
-                    </td>
-                </tr>
+            foreach ( $days as $key => $day ) {
+                $checked = in_array( $key, $selected_days ) ? 'checked' : '';
+                echo "<label><input type='checkbox' name='coding_bunny_whatsapp_settings[visible_days][]' value='" . esc_attr( $key ) . "' $checked class='$non_editable_class' /> " . esc_html( $day ) . "</label><br/>";
+            }
+            ?>
+            <p class="description"><?php esc_html_e( 'Select the days of the week on which to display the WhatsApp button.', 'coding-bunny-whatsapp-chat' ); ?></p>
+        </td>
+    </tr>
+
+    <!-- Display Time Settings -->
+    <tr valign="top">
+        <th scope="row"><?php esc_html_e( "Display time", 'coding-bunny-whatsapp-chat' ); ?> </th>
+        <td>
+            <input type="time" name="coding_bunny_whatsapp_settings[start_time]" value="<?php echo esc_attr( $start_time ); ?>" class="coding-bunny-input-time <?php echo $non_editable_class; ?>" />
+            <input type="time" name="coding_bunny_whatsapp_settings[end_time]" value="<?php echo esc_attr( $end_time ); ?>" class="coding-bunny-input-time <?php echo $non_editable_class; ?>" />
+            <p class="description"><?php esc_html_e( 'Set the time slot in which you wish to display the WhatsApp button.', 'coding-bunny-whatsapp-chat' ); ?> </p>
+        </td>
+    </tr>
+
+
 				
 				<!-- Show on All Devices Settings -->
                 <tr valign="top">
@@ -283,3 +285,14 @@ function coding_bunny_whatsapp_settings_page() {
 
     <?php
 }
+
+function coding_bunny_enqueue_scripts() {
+    wp_enqueue_script(
+        'coding-bunny-script', // Nome unico per lo script
+        plugin_dir_url( dirname( __FILE__ ) ) . 'js/coding-bunny-admin.js',
+        array(),
+        '1.0',
+        true
+    );
+}
+add_action('admin_enqueue_scripts', 'coding_bunny_enqueue_scripts');

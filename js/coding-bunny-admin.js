@@ -40,3 +40,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 });
+
+	// Disable interaction for elements with the .non-editable class
+	document.addEventListener("DOMContentLoaded", function() {
+		document.querySelectorAll('.non-editable').forEach(function(element) {
+			element.addEventListener('click', function(event) {
+				event.preventDefault();
+			});
+		});
+	});

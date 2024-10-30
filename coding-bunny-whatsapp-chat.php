@@ -4,7 +4,7 @@
  * Plugin Name: CodingBunny WhatsApp Chat
  * Plugin URI:  https://coding-bunny.com/whatsapp-chat/
  * Description: Allow visitors to your site to contact you via WhatsApp with just one click.
- * Version:     1.0.0
+ * Version:     1.0.1
  * Requires at least: 6.0
  * Requires PHP: 8.0
  * Author:      CodingBunny
@@ -51,7 +51,7 @@ add_action( 'plugins_loaded', 'coding_bunny_whatsapp_chat_load_textdomain' );
 // Add "Settings" link in the plugins list page
 add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'coding_bunny_whatsapp_chat_action_links' );
 function coding_bunny_whatsapp_chat_action_links( $links ) {
-    $settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=coding-bunny-whatsapp-chat' ) ) . '">' . __( 'Settings', 'coding-bunny-whatsapp-chat' ) . '</a>';
+    $settings_link = '<a href="' . esc_url( admin_url( 'admin.php?page=coding-bunny-whatsapp-settings' ) ) . '">' . __( 'Settings', 'coding-bunny-whatsapp-settings' ) . '</a>';
     array_unshift( $links, $settings_link );
     return $links;
 }
