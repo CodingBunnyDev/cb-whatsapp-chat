@@ -1,0 +1,318 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CodingBunny WhatsApp Chat\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-19 10:29+0000\n"
+"PO-Revision-Date: 2024-10-19 13:04+0200\n"
+"Last-Translator: Matteo De Maria <info@dmmwebdesign.it>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Loco-Version: 2.6.11; wp-6.6.2\n"
+"X-Domain: coding-bunny-whatsapp-chat\n"
+
+#: inc/licence-validation.php:133
+msgid "Activate licence"
+msgstr "Attiva licenza"
+
+#. Description of the plugin
+msgid ""
+"Allow visitors to your site to contact you via WhatsApp with just one click."
+msgstr ""
+"Permetti ai visitatori del tuo sito di contattarti via WhatsApp con un solo "
+"clic."
+
+#: inc/settings-page.php:165
+msgid "Appearance"
+msgstr "Aspetto"
+
+#: inc/settings-page.php:207
+msgid "Button Dimension (px)"
+msgstr "Dimensione pulsante (px)"
+
+#: inc/settings-page.php:170
+msgid "Button position"
+msgstr "Posizione pulsante"
+
+#: inc/settings-page.php:182
+msgid "Button Style"
+msgstr "Stile pulsante"
+
+#: inc/settings-page.php:189
+msgid "Chat"
+msgstr "Chat"
+
+#: inc/settings-page.php:176
+msgid "Choose where to display the button on the screen."
+msgstr "Scegli dove visualizzare il pulsante sullo schermo."
+
+#: inc/settings-page.php:159
+msgid ""
+"Choose whether to display the button only on smartphones and tablets or on "
+"all devices."
+msgstr ""
+"Scegli se visualizzare il pulsante solo su smartphone e tablet o su tutti i "
+"dispositivi."
+
+#. Author of the plugin
+msgid "CodingBunny"
+msgstr "CodingBunny"
+
+#. Name of the plugin
+#: inc/admin-menu.php:12 inc/settings-page.php:84
+#: inc/licence-validation.php:107
+msgid "CodingBunny WhatsApp Chat"
+msgstr "CodingBunny WhatsApp Chat"
+
+#: inc/settings-page.php:190
+msgid "Custom"
+msgstr "Personalizzato"
+
+#: inc/settings-page.php:118
+msgid "Days of Week"
+msgstr "Giorni della settimana"
+
+#: inc/licence-validation.php:129
+msgid "Deactivate licence"
+msgstr "Disattiva licenza"
+
+#: inc/settings-page.php:153
+msgid "Display on all devices"
+msgstr "Mostra su tutti i dispositivi"
+
+#: inc/settings-page.php:143
+msgid "Display time"
+msgstr "Orario"
+
+#: inc/licence-validation.php:113
+msgid "Email account:"
+msgstr "Account email:"
+
+#: inc/settings-page.php:99
+msgid "Enter the country code and your full phone number."
+msgstr "Immetti il prefisso internazionale e il numero di telefono completo."
+
+#: inc/settings-page.php:127
+msgid "Friday"
+msgstr "Venerdì"
+
+#: coding-bunny-whatsapp-chat.php:65
+msgid "Get CodingBunny WhatsApp Chat PRO!"
+msgstr "Ottieni CodingBunny WhatsApp Chat PRO!"
+
+#: inc/licence-validation.php:155
+msgid "Having problems with your licence? Contact our support: "
+msgstr "Hai problemi con la tua licenza? Contatta il nostro supporto: "
+
+#. Author URI of the plugin
+msgid "https://coding-bunny.com"
+msgstr "https://coding-bunny.com"
+
+#. URI of the plugin
+msgid "https://coding-bunny.com/whatsapp-chat/"
+msgstr "https://coding-bunny.com/whatsapp-chat/"
+
+#: inc/licence-validation.php:186
+msgid "Incorrect licence key or email"
+msgstr "Chiave di licenza o e-mail errata"
+
+#: inc/licence-validation.php:92
+msgid "Incorrect licence key or email: "
+msgstr "Chiave di licenza o e-mail errata: "
+
+#: inc/settings-page.php:174
+msgid "Left"
+msgstr "Sinistra"
+
+#: inc/licence-validation.php:141
+msgid "Licence active"
+msgstr "Licenza attiva"
+
+#: inc/licence-validation.php:119
+msgid "Licence Key:"
+msgstr "Chiave di licenza:"
+
+#: inc/licence-validation.php:101
+msgid "Licence successfully deactivated!"
+msgstr "Licenza disattivata con successo!"
+
+#: inc/licence-validation.php:89
+msgid "Licence successfully validated!"
+msgstr "Licenza attivata con successo!"
+
+#. Parent slug
+#. Page title
+#: inc/licence-validation.php:15 inc/licence-validation.php:16
+#: inc/licence-validation.php:109
+msgid "Manage Licence"
+msgstr "Gestisci licenza"
+
+#: inc/settings-page.php:123
+msgid "Monday"
+msgstr "Lunedì"
+
+#: inc/settings-page.php:157
+msgid "No"
+msgstr "No"
+
+#: inc/settings-page.php:97
+msgid "Phone Number"
+msgstr "Numero di telefono"
+
+#: inc/licence-validation.php:159
+msgid "Powered by CodingBunny"
+msgstr "Powered by CodingBunny"
+
+#: inc/settings-page.php:105
+msgid "Pre-filled Message"
+msgstr "Messaggio precompilato"
+
+#: inc/settings-page.php:96
+msgid "Prefix"
+msgstr "Prefisso"
+
+#: inc/settings-page.php:192
+msgid "Preview Button"
+msgstr "Anteprima pulsante"
+
+#: inc/settings-page.php:198
+msgid "Remove Image"
+msgstr "Rimuovi immagine"
+
+#: inc/settings-page.php:173
+msgid "Right"
+msgstr "Destra"
+
+#: inc/settings-page.php:187
+msgid "Round"
+msgstr "Rotondo"
+
+#: inc/settings-page.php:128
+msgid "Saturday"
+msgstr "Sabato"
+
+#: inc/settings-page.php:217
+msgid "Save Settings"
+msgstr "Salva impostazioni"
+
+#: inc/settings-page.php:31
+msgid "Security check failed"
+msgstr "Controllo di sicurezza fallito"
+
+#: inc/settings-page.php:197
+msgid "Select Image"
+msgstr "Seleziona immagine"
+
+#: inc/settings-page.php:256
+msgid "Select image"
+msgstr "Seleziona immagine"
+
+#: inc/settings-page.php:137
+msgid "Select the days of the week on which to display the WhatsApp button."
+msgstr ""
+"Selezionare i giorni della settimana in cui visualizzare il pulsante "
+"WhatsApp."
+
+#: inc/settings-page.php:201
+msgid "Select the type of button you wish to display."
+msgstr "Seleziona il tipo di pulsante che si desideri visualizzare."
+
+#: inc/settings-page.php:210
+msgid "Set button size (min: 20px, max: 60px)."
+msgstr "Imposta la dimensione del pulsante (min: 20px, max: 60px)."
+
+#: inc/settings-page.php:147
+msgid "Set the time slot in which you wish to display the WhatsApp button."
+msgstr ""
+"Impostare la fascia oraria in cui si desidera visualizzare il pulsante "
+"WhatsApp."
+
+#: coding-bunny-whatsapp-chat.php:54
+msgid "Settings"
+msgstr "Impostazioni"
+
+#: inc/settings-page.php:86
+msgid "Settings Chat"
+msgstr "Impostazioni Chat"
+
+#: inc/settings-page.php:186
+msgid "Simple"
+msgstr "Semplice"
+
+#: inc/settings-page.php:188
+msgid "Square"
+msgstr "Quadrato"
+
+#: inc/settings-page.php:129
+msgid "Sunday"
+msgstr "Domenica"
+
+#: inc/settings-page.php:108
+msgid ""
+"The message will be displayed when the user clicks on the WhatsApp button."
+msgstr ""
+"Il messaggio verrà visualizzato quando l'utente farà clic sul pulsante "
+"WhatsApp."
+
+#: inc/settings-page.php:126
+msgid "Thursday"
+msgstr "Giovedì"
+
+#: inc/settings-page.php:124
+msgid "Tuesday"
+msgstr "Martedì"
+
+#: inc/settings-page.php:199
+msgid "Upload or select an image from the library."
+msgstr "Carica o seleziona un’immagine dalla libreria."
+
+#: inc/settings-page.php:258
+msgid "Use this image"
+msgstr "Usa questa immagine"
+
+#: inc/settings-page.php:116
+msgid "Visibility"
+msgstr "Visibilità"
+
+#: inc/settings-page.php:125
+msgid "Wednesday"
+msgstr "Mercoledì"
+
+#. Page title
+#: inc/admin-menu.php:13
+msgid "WhatsApp Chat"
+msgstr "WhatsApp Chat"
+
+#: inc/settings-page.php:93
+msgid "WhatsApp Number"
+msgstr "Numero WhatsApp"
+
+#: inc/settings-page.php:156
+msgid "Yes"
+msgstr "Sì"
+
+#: inc/licence-validation.php:206
+#, php-format
+msgid ""
+"Your <b>CodingBunny WhatsApp Chat</b> licence expires in <b>%d days</b>! <a "
+"href=\"%s\">Renew now.</a>"
+msgstr ""
+"La licenza per <b>CodingBunny WhatsApp Chat</b> scade tra <b>%d giorni</b>! "
+"<a href=\"%s\">Rinnova ora.</a>"
+
+#: inc/licence-validation.php:143
+msgid "Your licence expires on:"
+msgstr "La licenza scade il:"
+
+#~ msgid "Anteprima pulsante"
+#~ msgstr "Preview button"
+
+#~ msgid "Seleziona immagine"
+#~ msgstr "Seleziona immagine"
+
+#~ msgid "Sì"
+#~ msgstr "Sì"

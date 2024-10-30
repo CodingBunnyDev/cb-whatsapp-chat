@@ -1,0 +1,64 @@
+/* Style for main heading inside the wrap */
+.wrap h1 {
+    font-size: 26px;  /* Set font size to 26 pixels */
+    font-weight: 700; /* Set font weight to bold */
+}
+
+.coding-bunny-flex-container-licence {
+        display: flex; /* Enable flexbox layout */
+        align-items: center; /* Align items vertically in the center */
+        margin-bottom: 20px; /* Space below the flex container */
+    }
+
+    .coding-bunny-flex-item-licence {
+        margin-right: 15px; /* Space between flex items */
+    }
+
+    .coding-bunny-flex-item-licence:last-child {
+        margin-right: 0; /* Remove margin from the last item */
+    }
+
+    .coding-bunny-flex-item-licence input[type="email"], 
+    .coding-bunny-flex-item-licence input[type="text"] {
+        width: 200px; /* Set a fixed width for input fields */
+    }
+
+    .coding-bunny-flex-item-licence label {
+        margin-right: 5px; /* Space between the label and the input field */
+		font-weight: bold;
+    }
+
+/* Prefix input field for phone number */
+.coding-bunny-input-prefix {
+    width: 60px; /* Set width to 60 pixels */
+} 
+
+/* Phone number input field */
+.coding-bunny-input-phone {
+    width: 190px; /* Set width to 190 pixels */
+}
+
+/* Message input field */
+.coding-bunny-input-message {
+    width: 500px; /* Set width to 500 pixels */
+}
+
+/* Select input for icon type */
+.coding-bunny-select-icon-type {
+    width: 100px; /* Set width to 100 pixels */
+}
+
+/* Input for icon size */
+.coding-bunny-input-icon-size {
+    width: 100px; /* Set width to 100 pixels */
+}
+
+/* Select input for position */
+.coding-bunny-select-position {
+    width: 100px; /* Set width to 100 pixels */
+}
+
+/* Select input for show on desktop */
+.coding-bunny-select-show-desktop {
+    width: 100px; /* Set width to 100 pixels */
+}
