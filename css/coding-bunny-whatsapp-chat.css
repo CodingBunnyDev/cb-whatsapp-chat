@@ -1,70 +1,243 @@
-/* Style for main heading inside the wrap */
-.wrap h1 {
-    font-size: 26px;  /* Set font size to 26 pixels */
-    font-weight: 700; /* Set font weight to bold */
+:root {
+    --cb-violet: #A98ED6;
+    --cb-violet-dark: #7F54B2;
+	--cb-violet-light: #F6F5FF;
+	--cb-white: #FFFFFF;
+	--cb-grey-dark: #2B3337;
 }
 
+/* Header styling */
+.wrap h1 {
+    font-size: 26px;
+    font-weight: 700;
+	margin-bottom: 20px;
+}
+
+/* Licence styling */
 .coding-bunny-flex-container-licence {
-        display: flex; /* Enable flexbox layout */
-        align-items: center; /* Align items vertically in the center */
-        margin-bottom: 20px; /* Space below the flex container */
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
     }
 
     .coding-bunny-flex-item-licence {
-        margin-right: 15px; /* Space between flex items */
+        margin-right: 15px;
     }
 
     .coding-bunny-flex-item-licence:last-child {
-        margin-right: 0; /* Remove margin from the last item */
+        margin-right: 0;
     }
 
     .coding-bunny-flex-item-licence input[type="email"], 
     .coding-bunny-flex-item-licence input[type="text"] {
-        width: 200px; /* Set a fixed width for input fields */
-    }
+        width: 100%;
+		max-width: 200px;
+		padding: 8px;
+		border: 1px solid var(--cb-violet);
+		border-radius: 4px;
+		font-size: 14px;
+		transition: border-color 0.3s;
+	}
 
     .coding-bunny-flex-item-licence label {
-        margin-right: 5px; /* Space between the label and the input field */
+        margin-right: 5px;
 		font-weight: bold;
     }
-
-/* Prefix input field for phone number */
-.coding-bunny-input-prefix {
-    width: 60px; /* Set width to 60 pixels */
-} 
-
-/* Phone number input field */
-.coding-bunny-input-phone {
-    width: 190px; /* Set width to 190 pixels */
-}
-
-/* Message input field */
-.coding-bunny-input-message {
-    width: 500px; /* Set width to 500 pixels */
-}
-
-/* Select input for icon type */
-.coding-bunny-select-icon-type {
-    width: 100px; /* Set width to 100 pixels */
-}
-
-/* Input for icon size */
-.coding-bunny-input-icon-size {
-    width: 100px; /* Set width to 100 pixels */
-}
-
-/* Select input for position */
-.coding-bunny-select-position {
-    width: 100px; /* Set width to 100 pixels */
-}
-
-/* Select input for show on desktop */
-.coding-bunny-select-show-desktop {
-    width: 100px; /* Set width to 100 pixels */
-}
 
 /* Non editable fields */
 .non-editable {
     pointer-events: none;
     opacity: 0.5;
+}
+
+/* Setting styling */
+.settings-box {
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.button-1-settings {
+    background-color: var(--cb-white);
+    border: 1px solid var(--cb-violet);
+}
+
+.button-2-settings {
+    background-color: var(--cb-violet-light);
+    border: 1px solid var(--cb-violet);
+}
+
+/* Prefix input field for phone number */
+input.coding-bunny-input-prefix {
+    width: 100%;
+    max-width: 90px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input.coding-bunny-input-prefix:focus {
+    border-color: var(--cb-violet-dark);
+    outline: none;
+}
+
+input.coding-bunny-input-prefix::placeholder {
+    color: var(--cb-grey-dark);
+    opacity: 1;
+}
+
+/* Phone number input field */
+input.coding-bunny-input-phone {
+    width: 100%;
+    max-width: 190px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input.coding-bunny-input-phone:focus {
+    border-color: var(--cb-violet-dark);
+    outline: none;
+}
+
+input.coding-bunny-input-phone::placeholder {
+    color: var(--cb-grey-dark);
+    opacity: 1;
+}
+
+/* Message input field */
+input.coding-bunny-input-message {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input.coding-bunny-input-message:focus {
+    border-color: var(--cb-violet-dark);
+    outline: none;
+}
+
+input.coding-bunny-input-message::placeholder {
+    color: var(--cb-grey-dark);
+    opacity: 1;
+}
+
+/* Select input for icon type */
+select.coding-bunny-select-icon-type {
+    width: 100%;
+    max-width: 100px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+/* Select input for position */
+select.coding-bunny-select-position {
+    width: 100%;
+    max-width: 100px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+/* Custom link input field */
+input.coding-bunny-input-link {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input.coding-bunny-input-link:focus {
+    border-color: var(--cb-violet-dark);
+    outline: none;
+}
+
+input.coding-bunny-input-link::placeholder {
+    color: var(--cb-grey-dark);
+    opacity: 1;
+}
+
+/* Input for icon size */
+input.coding-bunny-input-icon-size {
+    width: 100%;
+    max-width: 100px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+input.coding-bunny-input-icon-size:focus {
+    border-color: var(--cb-violet-dark);
+    outline: none;
+}
+
+input.coding-bunny-input-icon-size::placeholder {
+    color: var(--cb-grey-dark);
+    opacity: 1;
+}
+
+/* Select input for position */
+select.coding-bunny-select-position {
+    width: 100%;
+    max-width: 100px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+/* Select input for show on desktop */
+select.coding-bunny-select-show-desktop {
+    width: 100%;
+    max-width: 100px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+/* Select input for time */
+input[type="time"].coding-bunny-input-time {
+    width: 100%;
+    max-width: 100px;
+    padding: 8px;
+    border: 1px solid var(--cb-violet);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+/* Button Styles */
+.wp-core-ui .button-primary {
+    background: var(--cb-violet-dark);
+    border-color: var(--cb-violet-dark);
+    color: var(--cb-white);
+    padding: 7px 10px;
+}
+
+.wp-core-ui .button-primary:hover {
+    background: var(--cb-violet);
+    border-color: var(--cb-violet);
+    color: var(--cb-white);
+    padding: 7px 10px;
 }

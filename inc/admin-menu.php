@@ -9,8 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 function coding_bunny_whatsapp_menu() {
     // Add a new top-level menu page
     add_menu_page(
-        __( "CodingBunny WhatsApp Chat", 'coding-bunny-whatsapp-chat' ), // Page title
-        __( "WhatsApp Chat", 'coding-bunny-whatsapp-chat' ), // Menu title
+        esc_html__( "CodingBunny WhatsApp Chat", 'coding-bunny-whatsapp-chat' ), // Page title
+        esc_html__( "WhatsApp Chat", 'coding-bunny-whatsapp-chat' ), // Menu title
         'manage_options', // Capability required
         'coding-bunny-whatsapp-settings', // Menu slug
         'coding_bunny_whatsapp_settings_page', // Callback function

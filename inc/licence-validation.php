@@ -6,14 +6,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define the plugin version
-define( 'CODING_BUNNY_WHATSAPP_CHAT_VERSION', '1.0.1' );
+define( 'CODING_BUNNY_WHATSAPP_CHAT_VERSION', '1.1.0' );
 
 // Function to add a submenu item for licence validation
 function coding_bunny_whatsapp_submenu() {
     add_submenu_page(
         'coding-bunny-whatsapp-settings', // Parent slug
-        __( "Manage Licence", 'coding-bunny-whatsapp-chat' ), // Page title
-        __( "Manage Licence", 'coding-bunny-whatsapp-chat' ), // Menu title
+        esc_html__( "Manage Licence", 'coding-bunny-whatsapp-chat' ), // Page title
+        esc_html__( "Manage Licence", 'coding-bunny-whatsapp-chat' ), // Menu title
         'manage_options', // Capability required to access this menu
         'coding-bunny-whatsapp-licence', // Menu slug
         'coding_bunny_whatsapp_licence_page' // Function to display the page content
@@ -21,16 +21,16 @@ function coding_bunny_whatsapp_submenu() {
 
     // Check if the licence is inactive
     $licence_data = get_option( 'coding_bunny_whatsapp_licence_data', [ 'key' => '', 'email' => '' ] );
-    $licence_key = esc_attr( $licence_data['key'] );
-    $licence_email = esc_attr( $licence_data['email'] );
+    $licence_key = sanitize_text_field( $licence_data['key'] );
+    $licence_email = sanitize_email( $licence_data['email'] );
     $licence_active = coding_bunny_validate_licence( $licence_key, $licence_email );
 
     // Add "Go Pro" menu item if the licence is inactive
     if ( !$licence_active['success'] ) {
 		add_submenu_page(
 		    'coding-bunny-whatsapp-settings', // Usa lo stesso slug del parent
-		    __( "Go Pro", 'coding-bunny-whatsapp-settings' ), // Titolo della pagina
-		    __( "Go Pro", 'coding-bunny-whatsapp-settings' ), // Titolo del menu
+		    esc_html( "Go Pro", 'coding-bunny-whatsapp-settings' ), // Titolo della pagina
+		    esc_html( "Go Pro", 'coding-bunny-whatsapp-settings' ), // Titolo del menu
 		    'manage_options', // Capacità richiesta
 		    'coding-bunny-whatsapp-chat-pro', // Slug del menu
 		    'coding_bunny_whatsapp_chat_pro_redirect' // Funzione di reindirizzamento
@@ -43,10 +43,9 @@ add_action( 'admin_menu', 'coding_bunny_whatsapp_submenu' );
 
 // Function to handle redirection to external URL
 function coding_bunny_whatsapp_chat_pro_redirect() {
-    if (!headers_sent()) {
-        wp_safe_redirect( 'https://www.coding-bunny.com/whatsapp-chat/' );
-        exit;
-    }
+    // Redirect to the external site
+    wp_redirect( esc_url_raw( 'https://www.coding-bunny.com/whatsapp-chat/' ) ); // External URL
+    exit;
 }
 
 // Function to add custom CSS to highlight the "Passa a Pro" menu item
@@ -73,8 +72,8 @@ add_action( 'admin_head', 'coding_bunny_whatsapp_chat_admin_styles' );
 // Function to display the licence validation page content
 function coding_bunny_whatsapp_licence_page() {
     $licence_data = get_option('coding_bunny_whatsapp_licence_data', ['key' => '', 'email' => '']);
-    $licence_key = $licence_data['key'];
-    $licence_email = $licence_data['email'];
+    $licence_key = sanitize_text_field( $licence_data['key'] );
+    $licence_email = sanitize_email( $licence_data['email'] );
 	$licence_active = coding_bunny_validate_licence( $licence_key, $licence_email );
 
     // Handle the licence validation
@@ -86,10 +85,10 @@ function coding_bunny_whatsapp_licence_page() {
         if ( $response['success'] ) {
             // Save the valid licence key and email in the database
             update_option( 'coding_bunny_whatsapp_licence_data', [ 'key' => $licence_key, 'email' => $licence_email ] );
-            echo '<div class="notice notice-success"><p>' . __( "Licence successfully validated!", 'coding-bunny-whatsapp-chat' ) . '</p></div>';
+            echo '<div class="notice notice-success"><p>' . esc_html__( "Licence successfully validated!", 'coding-bunny-whatsapp-chat' ) . '</p></div>';
             echo '<script>setTimeout(function(){ location.reload(); }, 1000);</script>'; // Reload the page after 1 second
         } else {
-            echo '<div class="notice notice-error"><p>' . __( "Incorrect licence key or email: ", 'coding-bunny-whatsapp-chat' ) . esc_html( $response['error'] ) . '</p></div>';
+            echo '<div class="notice notice-error"><p>' . esc_html__( "Incorrect licence key or email: ", 'coding-bunny-whatsapp-chat' ) . esc_html( $response['error'] ) . '</p></div>';
         }
     }
 
@@ -98,25 +97,25 @@ function coding_bunny_whatsapp_licence_page() {
         delete_option( 'coding_bunny_whatsapp_licence_data' );
         $licence_key = '';
         $licence_email = '';
-        echo '<div class="notice notice-success"><p>' . __( "Licence successfully deactivated!", 'coding-bunny-whatsapp-chat' ) . '</p></div>';
+        echo '<div class="notice notice-success"><p>' . esc_html__( "Licence successfully deactivated!", 'coding-bunny-whatsapp-chat' ) . '</p></div>';
         echo '<script>setTimeout(function(){ location.reload(); }, 1000);</script>'; // Reload the page after 1 second
     }
 
     ?>
   <div class="wrap coding-bunny-whatsapp-chat-wrap">
     <h1><?php esc_html_e( 'CodingBunny WhatsApp Chat', 'coding-bunny-whatsapp-chat' ); ?> 
-       <span style="font-size: 10px;">v<?php echo CODING_BUNNY_WHATSAPP_CHAT_VERSION; ?></span></h1>
+       <span style="font-size: 10px;">v<?php echo esc_html( CODING_BUNNY_WHATSAPP_CHAT_VERSION ); ?></span></h1>
     <h3><?php esc_html_e( "Manage Licence", 'coding-bunny-whatsapp-chat' ); ?></h3>
     <form method="post" action="">
         <div class="coding-bunny-flex-container-licence">
             <div class="coding-bunny-flex-item-licence">
-                <label for="licence_email"><?php _e( "Email account:", 'coding-bunny-whatsapp-chat' ); ?></label>
+                <label for="licence_email"><?php esc_html_e( "Email account:", 'coding-bunny-whatsapp-chat' ); ?></label>
             </div>
             <div class="coding-bunny-flex-item-licence">
                 <input type="email" id="licence_email" name="licence_email" value="<?php echo esc_attr( $licence_email ); ?>" required />
             </div>
             <div class="coding-bunny-flex-item-licence">
-                <label for="licence_key"><?php _e( "Licence Key:", 'coding-bunny-whatsapp-chat' ); ?></label>
+                <label for="licence_key"><?php esc_html_e( "Licence Key:", 'coding-bunny-whatsapp-chat' ); ?></label>
             </div>
             <div class="coding-bunny-flex-item-licence">
                 <input type="text" id="licence_key" name="licence_key" 
@@ -163,35 +162,35 @@ function coding_bunny_whatsapp_licence_page() {
 
 // Function to validate the licence key
 function coding_bunny_validate_licence( $licence_key, $licence_email ) {
-    $url = 'https://www.coding-bunny.com/plugins-licence/wc-active-licence.php';
+    $url = esc_url_raw( 'https://www.coding-bunny.com/plugins-licence/wc-active-licence.php' );
 
-    $response = wp_remote_post( $url, array(
-        'body' => json_encode( array( 'licence_key' => $licence_key, 'email' => $licence_email ) ),
-        'headers' => array(
+    $response = wp_remote_post( $url, [
+        'body' => wp_json_encode( [ 'licence_key' => sanitize_text_field( $licence_key ), 'email' => sanitize_email( $licence_email ) ] ),
+        'headers' => [
             'Content-Type' => 'application/json',
-        ),
+        ],
         'timeout' => 15,
         'sslverify' => true,
-    ));
+    ]);
 
     if ( is_wp_error( $response ) ) {
-        return array( 'success' => false, 'error' => $response->get_error_message() );
+        return [ 'success' => false, 'error' => $response->get_error_message() ];
     }
 
     $body = json_decode( wp_remote_retrieve_body( $response ), true );
 
     if ( isset( $body['success'] ) && $body['success'] ) {
-        return array( 'success' => true, 'expiration' => $body['expiration'] ); // Get expiration date from server response
+        return [ 'success' => true, 'expiration' => sanitize_text_field( $body['expiration'] ) ]; // Get expiration date from server response
     } else {
-        return array( 'success' => false, 'error' => isset( $body['error'] ) ? $body['error'] : __( "Incorrect licence key or email", 'coding-bunny-whatsapp-chat' ) );
+        return [ 'success' => false, 'error' => isset( $body['error'] ) ? sanitize_text_field( $body['error'] ) : esc_html__( "Incorrect licence key or email", 'coding-bunny-image-optimizer' ) ];
     }
 }
 
 // Function to show the warning notice on the dashboard
 function coding_bunny_licence_expiration_notice() {
     $licence_data = get_option('coding_bunny_whatsapp_licence_data', ['key' => '', 'email' => '']);
-    $licence_key = $licence_data['key'];
-    $licence_email = $licence_data['email'];
+    $licence_key = sanitize_text_field( $licence_data['key'] );
+    $licence_email = sanitize_email( $licence_data['email'] );
     $licence_active = coding_bunny_validate_licence( $licence_key, $licence_email );
 
     if ( $licence_active['success'] ) {
@@ -203,7 +202,7 @@ function coding_bunny_licence_expiration_notice() {
     add_action( 'admin_notices', function() use ( $days_until_expiration ) {
         echo '<div class="notice notice-warning is-dismissible"><p>' . 
             sprintf( 
-                __( 'Your <b>CodingBunny WhatsApp Chat</b> licence expires in <b>%d days</b>! <a href="%s">Renew now.</a>', 'coding-bunny-whatsapp-chat' ), 
+                esc_html__( 'Your <b>CodingBunny WhatsApp Chat</b> licence expires in <b>%d days</b>! <a href="%s">Renew now.</a>', 'coding-bunny-whatsapp-chat' ), 
                 $days_until_expiration, 
                 esc_url( 'mailto:support@coding-bunny.com' ) 
             ) . 

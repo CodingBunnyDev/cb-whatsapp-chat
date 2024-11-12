@@ -7,8 +7,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // Function to check if a new version of the plugin is available
 function coding_bunny_whatsapp_chat_check_version() {
-    $current_version = CODING_BUNNY_WHATSAPP_CHAT_VERSION; // Current plugin version
-    $url = 'https://www.coding-bunny.com/plugins-updates/wc-check-version.php'; // URL of the script to check for updates
+    $current_version = defined('CODING_BUNNY_WHATSAPP_CHAT_VERSION') ? sanitize_text_field(CODING_BUNNY_WHATSAPP_CHAT_VERSION) : '1.1.0'; // Current plugin version with default value
+    $url = esc_url_raw('https://www.coding-bunny.com/plugins-updates/wc-check-version.php'); // URL of the script to check for updates
 
     // Perform a request to the server to check the version
     $response = wp_remote_post($url, [
@@ -21,12 +21,12 @@ function coding_bunny_whatsapp_chat_check_version() {
 
     // Handle the response
     if (is_wp_error($response)) {
+        error_log('Error checking for plugin updates: ' . $response->get_error_message()); // Log the error message
         return false; // Return false if there was an error with the request
     }
 
     // Retrieve and decode the response body
     $body = wp_remote_retrieve_body($response);
-
     $decoded_body = json_decode($body, true);
 
     // Verify if the response is valid and check for an available update

@@ -6,24 +6,31 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Function to display the WhatsApp button
-function coding_bunny_pulsante_whatsapp() { 
+function coding_bunny_pulsante_whatsapp() {
     // Retrieve settings from the database
-    $prefix = get_option( 'coding_bunny_whatsapp_prefix', '+39' ); // WhatsApp prefix
-    $phone_number = get_option( 'coding_bunny_whatsapp_phone', '1234567890' ); // Phone number
-    $message = get_option( 'coding_bunny_whatsapp_message', 'Ciao! Vorrei maggiori informazioni su' ); // Default message
-    $position = get_option( 'coding_bunny_whatsapp_position', 'right' ); // Button position
-    $icon_size = get_option( 'coding_bunny_whatsapp_icon_size', 48 ); // Button size
-    $show_on_desktop = get_option( 'coding_bunny_whatsapp_show_on_desktop', 'no' ); // Show on desktop setting
-    $icon_type = get_option( 'coding_bunny_whatsapp_icon_type', 'dmm-simple-icon.svg' ); // Icon type
-    $start_time = get_option( 'coding_bunny_whatsapp_start_time', '09:00' ); // Start time for visibility
-    $end_time = get_option( 'coding_bunny_whatsapp_end_time', '17:00' ); // End time for visibility
+    $prefix = sanitize_text_field( get_option( 'coding_bunny_whatsapp_prefix', '+39' ) ); // WhatsApp prefix
+    $phone_number = sanitize_text_field( get_option( 'coding_bunny_whatsapp_phone', '1234567890' ) ); // Phone number
+    $message = sanitize_text_field( get_option( 'coding_bunny_whatsapp_message', 'Ciao! Vorrei maggiori informazioni su' ) ); // Default message
+    $position = sanitize_text_field( get_option( 'coding_bunny_whatsapp_position', 'right' ) ); // Button position
+    $icon_size = intval( get_option( 'coding_bunny_whatsapp_icon_size', 48 ) ); // Button size
+    $show_on_desktop = sanitize_text_field( get_option( 'coding_bunny_whatsapp_show_on_desktop', 'no' ) ); // Show on desktop setting
+    $icon_type = sanitize_text_field( get_option( 'coding_bunny_whatsapp_icon_type', 'dmm-simple-icon.svg' ) ); // Icon type
+    $time_settings = get_option( 'coding_bunny_whatsapp_time_settings', [] ); // Time settings for each day
     $current_time = current_time( 'H:i' ); // Get the current time
-    $selected_days = get_option( 'coding_bunny_whatsapp_visible_days', [] ); // Selected days for visibility
     $current_day = strtolower( date( 'l' ) ); // Get the current day in lowercase
 
-    // Check if the button should be displayed based on time and day
-    if ( $current_time < $start_time || $current_time > $end_time || ! in_array( $current_day, $selected_days ) ) {
-        return; // Exit if not within the specified time or day
+    // Check if the button should be displayed based on the time for the current day
+    if ( isset( $time_settings[$current_day] ) ) {
+        $start_time = $time_settings[$current_day]['start'];
+        $end_time = $time_settings[$current_day]['end'];
+    } else {
+        // Default to 00:00 - 23:59 if no specific settings are found
+        $start_time = '00:00';
+        $end_time = '23:59';
+    }
+
+    if ( $current_time < $start_time || $current_time > $end_time ) {
+        return; // Exit if not within the specified time for the current day
     }
 
     // Determine if the button should be displayed on mobile or desktop
@@ -36,7 +43,7 @@ function coding_bunny_pulsante_whatsapp() {
         if ( $icon_type === 'custom' && ! empty( get_option( 'coding_bunny_whatsapp_custom_icon_url' ) ) ) {
             $icon_url = esc_url( get_option( 'coding_bunny_whatsapp_custom_icon_url' ) ); // Custom icon URL
         } else {
-            $icon_url = plugin_dir_url( dirname( __FILE__ ) ) . 'images/' . esc_attr( $icon_type ); // Default icon URL
+            $icon_url = esc_url( plugin_dir_url( dirname( __FILE__ ) ) . 'images/' . esc_attr( $icon_type ) ); // Default icon URL
         }
 
         // Output the styles for the button
@@ -69,7 +76,7 @@ function coding_bunny_pulsante_whatsapp() {
 // Function to enqueue admin scripts
 function coding_bunny_enqueue_admin_scripts() {
     // Check if we're on the settings page
-    if ( isset( $_GET['page'] ) && $_GET['page'] === 'coding-bunny-whatsapp-settings' ) {
+    if ( isset( $_GET['page'] ) && sanitize_text_field( $_GET['page'] ) === 'coding-bunny-whatsapp-settings' ) {
         wp_enqueue_media(); // Load media uploader
         wp_enqueue_script( 'coding-bunny-admin-scripts', plugin_dir_url( dirname( __FILE__ ) ) . 'js/coding-bunny-admin.js', ['jquery'], null, true ); // Load custom admin scripts
     }
