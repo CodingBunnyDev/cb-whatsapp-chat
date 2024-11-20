@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CodingBunny WhatsApp Chat\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-12 14:07+0000\n"
-"PO-Revision-Date: 2024-11-12 15:08+0100\n"
+"POT-Creation-Date: 2024-11-20 16:03+0000\n"
+"PO-Revision-Date: 2024-11-20 17:06+0100\n"
 "Last-Translator: Matteo De Maria <info@dmmwebdesign.it>\n"
 "Language-Team: \n"
 "Language: it\n"
@@ -26,31 +26,47 @@ msgstr ""
 "Permetti ai visitatori del tuo sito di contattarti via WhatsApp con un solo "
 "clic."
 
-#: inc/settings-page.php:167
+#: inc/settings-page.php:173
 msgid "Appearance"
 msgstr "Aspetto"
 
-#: inc/settings-page.php:209
+#: inc/settings-page.php:237
 msgid "Button Dimension (px)"
 msgstr "Dimensione pulsante (px)"
 
-#: inc/settings-page.php:172
-msgid "Button position"
+#: inc/settings-page.php:178
+msgid "Button Position"
 msgstr "Posizione pulsante"
 
-#: inc/settings-page.php:184
+#: inc/settings-page.php:245
+msgid "Button Shadow"
+msgstr "Ombra pulsante"
+
+#: inc/settings-page.php:209
 msgid "Button Style"
 msgstr "Stile pulsante"
 
-#: inc/settings-page.php:191
-msgid "Chat"
-msgstr "Chat"
+#: inc/settings-page.php:190
+msgid "Button Vertical Offset (px)"
+msgstr "Offset verticale"
 
-#: inc/settings-page.php:178
+#: inc/settings-page.php:216
+msgid "Chat 1"
+msgstr "Chat 1"
+
+#: inc/settings-page.php:217
+msgid "Chat 2"
+msgstr "Chat 2"
+
+#: inc/settings-page.php:218
+msgid "Chat 3"
+msgstr "Chat 3"
+
+#: inc/settings-page.php:184
 msgid "Choose where to display the button on the screen."
 msgstr "Scegli dove visualizzare il pulsante sullo schermo."
 
-#: inc/settings-page.php:161
+#: inc/settings-page.php:167
 msgid ""
 "Choose whether to display the button only on smartphones and tablets or on "
 "all devices."
@@ -63,12 +79,12 @@ msgid "CodingBunny"
 msgstr "CodingBunny"
 
 #. Name of the plugin
-#: inc/admin-menu.php:12 inc/settings-page.php:92
+#: inc/admin-menu.php:12 inc/settings-page.php:98
 #: inc/licence-validation.php:106
 msgid "CodingBunny WhatsApp Chat"
 msgstr "CodingBunny WhatsApp Chat"
 
-#: inc/settings-page.php:192
+#: inc/settings-page.php:220
 msgid "Custom"
 msgstr "Personalizzato"
 
@@ -76,7 +92,7 @@ msgstr "Personalizzato"
 msgid "Deactivate licence"
 msgstr "Disattiva licenza"
 
-#: inc/settings-page.php:155
+#: inc/settings-page.php:161
 msgid "Display on all devices"
 msgstr "Mostra su tutti i dispositivi"
 
@@ -84,11 +100,11 @@ msgstr "Mostra su tutti i dispositivi"
 msgid "Email account:"
 msgstr "Account email:"
 
-#: inc/settings-page.php:107
+#: inc/settings-page.php:113
 msgid "Enter the country code and your full phone number."
 msgstr "Immetti il prefisso internazionale e il numero di telefono completo."
 
-#: inc/settings-page.php:131
+#: inc/settings-page.php:137
 msgid "Friday"
 msgstr "Venerdì"
 
@@ -112,7 +128,11 @@ msgstr "https://coding-bunny.com/whatsapp-chat/"
 msgid "Incorrect licence key or email: "
 msgstr "Chiave di licenza o e-mail errata: "
 
-#: inc/settings-page.php:176
+#: inc/settings-page.php:219
+msgid "Info"
+msgstr "Info"
+
+#: inc/settings-page.php:182
 msgid "Left"
 msgstr "Sinistra"
 
@@ -139,15 +159,15 @@ msgstr "Licenza attivata con successo!"
 msgid "Manage Licence"
 msgstr "Gestisci licenza"
 
-#: inc/settings-page.php:127
+#: inc/settings-page.php:133
 msgid "Monday"
 msgstr "Lunedì"
 
-#: inc/settings-page.php:159
+#: inc/settings-page.php:165
 msgid "No"
 msgstr "No"
 
-#: inc/settings-page.php:105
+#: inc/settings-page.php:111
 msgid "Phone Number"
 msgstr "Numero di telefono"
 
@@ -155,35 +175,35 @@ msgstr "Numero di telefono"
 msgid "Powered by CodingBunny"
 msgstr "Powered by CodingBunny"
 
-#: inc/settings-page.php:113
+#: inc/settings-page.php:119
 msgid "Pre-filled Message"
 msgstr "Messaggio precompilato"
 
-#: inc/settings-page.php:104
+#: inc/settings-page.php:110
 msgid "Prefix"
 msgstr "Prefisso"
 
-#: inc/settings-page.php:194
+#: inc/settings-page.php:222
 msgid "Preview Button"
 msgstr "Anteprima pulsante"
 
-#: inc/settings-page.php:200
+#: inc/settings-page.php:228
 msgid "Remove Image"
 msgstr "Rimuovi immagine"
 
-#: inc/settings-page.php:175
+#: inc/settings-page.php:181
 msgid "Right"
 msgstr "Destra"
 
-#: inc/settings-page.php:189
+#: inc/settings-page.php:214
 msgid "Round"
 msgstr "Rotondo"
 
-#: inc/settings-page.php:132
+#: inc/settings-page.php:138
 msgid "Saturday"
 msgstr "Sabato"
 
-#: inc/settings-page.php:219
+#: inc/settings-page.php:265
 msgid "Save Settings"
 msgstr "Salva impostazioni"
 
@@ -191,73 +211,81 @@ msgstr "Salva impostazioni"
 msgid "Security check failed"
 msgstr "Controllo di sicurezza fallito"
 
-#: inc/settings-page.php:199
+#: inc/settings-page.php:227
 msgid "Select Image"
 msgstr "Seleziona immagine"
 
-#: inc/settings-page.php:258
+#: inc/settings-page.php:304
 msgid "Select image"
 msgstr "Seleziona immagine"
 
-#: inc/settings-page.php:203
+#: inc/settings-page.php:231
 msgid "Select the type of button you wish to display."
 msgstr "Seleziona il tipo di pulsante che si desideri visualizzare."
 
-#: inc/settings-page.php:212
+#: inc/settings-page.php:257
+msgid "Set button shadow (min: 0, max: 1)."
+msgstr "Imposta l’ombra del pulsante (min: 0, max: 1)."
+
+#: inc/settings-page.php:240
 msgid "Set button size (min: 20px, max: 60px)."
 msgstr "Imposta la dimensione del pulsante (min: 20px, max: 60px)."
 
-#: inc/settings-page.php:151
+#: inc/settings-page.php:202
+msgid "Set button vertical offset (min: 10px, max: 300px)."
+msgstr "Imposta l’offset verticale del pulsante (min: 10px, max: 300px)."
+
+#: inc/settings-page.php:157
 msgid ""
 "Set the start and end times for each day of the week to display the WhatsApp "
 "button."
 msgstr ""
 "Seleziona i giorni della settimana in cui visualizzare il pulsante WhatsApp."
 
-#: inc/settings-page.php:94
+#: inc/settings-page.php:100
 msgid "Settings Chat"
 msgstr "Impostazioni Chat"
 
-#: inc/settings-page.php:188
+#: inc/settings-page.php:213
 msgid "Simple"
 msgstr "Semplice"
 
-#: inc/settings-page.php:190
+#: inc/settings-page.php:215
 msgid "Square"
 msgstr "Quadrato"
 
-#: inc/settings-page.php:133
+#: inc/settings-page.php:139
 msgid "Sunday"
 msgstr "Domenica"
 
-#: inc/settings-page.php:116
+#: inc/settings-page.php:122
 msgid ""
 "The message will be displayed when the user clicks on the WhatsApp button."
 msgstr ""
 "Il messaggio verrà visualizzato quando l'utente farà clic sul pulsante "
 "WhatsApp."
 
-#: inc/settings-page.php:130
+#: inc/settings-page.php:136
 msgid "Thursday"
 msgstr "Giovedì"
 
-#: inc/settings-page.php:128
+#: inc/settings-page.php:134
 msgid "Tuesday"
 msgstr "Martedì"
 
-#: inc/settings-page.php:201
+#: inc/settings-page.php:229
 msgid "Upload or select an image from the library."
 msgstr "Carica o seleziona un’immagine dalla libreria."
 
-#: inc/settings-page.php:260
+#: inc/settings-page.php:306
 msgid "Use this image"
 msgstr "Usa questa immagine"
 
-#: inc/settings-page.php:124
+#: inc/settings-page.php:130
 msgid "Visibility"
 msgstr "Visibilità"
 
-#: inc/settings-page.php:129
+#: inc/settings-page.php:135
 msgid "Wednesday"
 msgstr "Mercoledì"
 
@@ -266,11 +294,11 @@ msgstr "Mercoledì"
 msgid "WhatsApp Chat"
 msgstr "WhatsApp Chat"
 
-#: inc/settings-page.php:101
+#: inc/settings-page.php:107
 msgid "WhatsApp Number"
 msgstr "Numero WhatsApp"
 
-#: inc/settings-page.php:158
+#: inc/settings-page.php:164
 msgid "Yes"
 msgstr "Sì"
 

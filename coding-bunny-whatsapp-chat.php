@@ -4,7 +4,7 @@
  * Plugin Name: CodingBunny WhatsApp Chat
  * Plugin URI:  https://coding-bunny.com/whatsapp-chat/
  * Description: Allow visitors to your site to contact you via WhatsApp with just one click.
- * Version:     1.1.0
+ * Version:     1.2.0
  * Requires at least: 6.0
  * Requires PHP: 8.0
  * Author:      CodingBunny

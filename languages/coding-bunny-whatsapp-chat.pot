@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CodingBunny WhatsApp Chat\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-12 14:07+0000\n"
+"POT-Creation-Date: 2024-11-20 16:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: CodingBunny\n"
@@ -26,31 +26,47 @@ msgid ""
 "Allow visitors to your site to contact you via WhatsApp with just one click."
 msgstr ""
 
-#: inc/settings-page.php:167
+#: inc/settings-page.php:173
 msgid "Appearance"
 msgstr ""
 
-#: inc/settings-page.php:209
+#: inc/settings-page.php:237
 msgid "Button Dimension (px)"
 msgstr ""
 
-#: inc/settings-page.php:172
-msgid "Button position"
+#: inc/settings-page.php:178
+msgid "Button Position"
 msgstr ""
 
-#: inc/settings-page.php:184
+#: inc/settings-page.php:245
+msgid "Button Shadow"
+msgstr ""
+
+#: inc/settings-page.php:209
 msgid "Button Style"
 msgstr ""
 
-#: inc/settings-page.php:191
-msgid "Chat"
+#: inc/settings-page.php:190
+msgid "Button Vertical Offset (px)"
 msgstr ""
 
-#: inc/settings-page.php:178
+#: inc/settings-page.php:216
+msgid "Chat 1"
+msgstr ""
+
+#: inc/settings-page.php:217
+msgid "Chat 2"
+msgstr ""
+
+#: inc/settings-page.php:218
+msgid "Chat 3"
+msgstr ""
+
+#: inc/settings-page.php:184
 msgid "Choose where to display the button on the screen."
 msgstr ""
 
-#: inc/settings-page.php:161
+#: inc/settings-page.php:167
 msgid ""
 "Choose whether to display the button only on smartphones and tablets or on "
 "all devices."
@@ -61,12 +77,12 @@ msgid "CodingBunny"
 msgstr ""
 
 #. Name of the plugin
-#: inc/admin-menu.php:12 inc/settings-page.php:92 
+#: inc/admin-menu.php:12 inc/settings-page.php:98 
 #: inc/licence-validation.php:106
 msgid "CodingBunny WhatsApp Chat"
 msgstr ""
 
-#: inc/settings-page.php:192
+#: inc/settings-page.php:220
 msgid "Custom"
 msgstr ""
 
@@ -74,7 +90,7 @@ msgstr ""
 msgid "Deactivate licence"
 msgstr ""
 
-#: inc/settings-page.php:155
+#: inc/settings-page.php:161
 msgid "Display on all devices"
 msgstr ""
 
@@ -82,11 +98,11 @@ msgstr ""
 msgid "Email account:"
 msgstr ""
 
-#: inc/settings-page.php:107
+#: inc/settings-page.php:113
 msgid "Enter the country code and your full phone number."
 msgstr ""
 
-#: inc/settings-page.php:131
+#: inc/settings-page.php:137
 msgid "Friday"
 msgstr ""
 
@@ -110,7 +126,11 @@ msgstr ""
 msgid "Incorrect licence key or email: "
 msgstr ""
 
-#: inc/settings-page.php:176
+#: inc/settings-page.php:219
+msgid "Info"
+msgstr ""
+
+#: inc/settings-page.php:182
 msgid "Left"
 msgstr ""
 
@@ -137,15 +157,15 @@ msgstr ""
 msgid "Manage Licence"
 msgstr ""
 
-#: inc/settings-page.php:127
+#: inc/settings-page.php:133
 msgid "Monday"
 msgstr ""
 
-#: inc/settings-page.php:159
+#: inc/settings-page.php:165
 msgid "No"
 msgstr ""
 
-#: inc/settings-page.php:105
+#: inc/settings-page.php:111
 msgid "Phone Number"
 msgstr ""
 
@@ -153,35 +173,35 @@ msgstr ""
 msgid "Powered by CodingBunny"
 msgstr ""
 
-#: inc/settings-page.php:113
+#: inc/settings-page.php:119
 msgid "Pre-filled Message"
 msgstr ""
 
-#: inc/settings-page.php:104
+#: inc/settings-page.php:110
 msgid "Prefix"
 msgstr ""
 
-#: inc/settings-page.php:194
+#: inc/settings-page.php:222
 msgid "Preview Button"
 msgstr ""
 
-#: inc/settings-page.php:200
+#: inc/settings-page.php:228
 msgid "Remove Image"
 msgstr ""
 
-#: inc/settings-page.php:175
+#: inc/settings-page.php:181
 msgid "Right"
 msgstr ""
 
-#: inc/settings-page.php:189
+#: inc/settings-page.php:214
 msgid "Round"
 msgstr ""
 
-#: inc/settings-page.php:132
+#: inc/settings-page.php:138
 msgid "Saturday"
 msgstr ""
 
-#: inc/settings-page.php:219
+#: inc/settings-page.php:265
 msgid "Save Settings"
 msgstr ""
 
@@ -189,70 +209,78 @@ msgstr ""
 msgid "Security check failed"
 msgstr ""
 
-#: inc/settings-page.php:199
+#: inc/settings-page.php:227
 msgid "Select Image"
 msgstr ""
 
-#: inc/settings-page.php:258
+#: inc/settings-page.php:304
 msgid "Select image"
 msgstr ""
 
-#: inc/settings-page.php:203
+#: inc/settings-page.php:231
 msgid "Select the type of button you wish to display."
 msgstr ""
 
-#: inc/settings-page.php:212
+#: inc/settings-page.php:257
+msgid "Set button shadow (min: 0, max: 1)."
+msgstr ""
+
+#: inc/settings-page.php:240
 msgid "Set button size (min: 20px, max: 60px)."
 msgstr ""
 
-#: inc/settings-page.php:151
+#: inc/settings-page.php:202
+msgid "Set button vertical offset (min: 10px, max: 300px)."
+msgstr ""
+
+#: inc/settings-page.php:157
 msgid ""
 "Set the start and end times for each day of the week to display the WhatsApp "
 "button."
 msgstr ""
 
-#: inc/settings-page.php:94
+#: inc/settings-page.php:100
 msgid "Settings Chat"
 msgstr ""
 
-#: inc/settings-page.php:188
+#: inc/settings-page.php:213
 msgid "Simple"
 msgstr ""
 
-#: inc/settings-page.php:190
+#: inc/settings-page.php:215
 msgid "Square"
 msgstr ""
 
-#: inc/settings-page.php:133
+#: inc/settings-page.php:139
 msgid "Sunday"
 msgstr ""
 
-#: inc/settings-page.php:116
+#: inc/settings-page.php:122
 msgid ""
 "The message will be displayed when the user clicks on the WhatsApp button."
 msgstr ""
 
-#: inc/settings-page.php:130
+#: inc/settings-page.php:136
 msgid "Thursday"
 msgstr ""
 
-#: inc/settings-page.php:128
+#: inc/settings-page.php:134
 msgid "Tuesday"
 msgstr ""
 
-#: inc/settings-page.php:201
+#: inc/settings-page.php:229
 msgid "Upload or select an image from the library."
 msgstr ""
 
-#: inc/settings-page.php:260
+#: inc/settings-page.php:306
 msgid "Use this image"
 msgstr ""
 
-#: inc/settings-page.php:124
+#: inc/settings-page.php:130
 msgid "Visibility"
 msgstr ""
 
-#: inc/settings-page.php:129
+#: inc/settings-page.php:135
 msgid "Wednesday"
 msgstr ""
 
@@ -261,11 +289,11 @@ msgstr ""
 msgid "WhatsApp Chat"
 msgstr ""
 
-#: inc/settings-page.php:101
+#: inc/settings-page.php:107
 msgid "WhatsApp Number"
 msgstr ""
 
-#: inc/settings-page.php:158
+#: inc/settings-page.php:164
 msgid "Yes"
 msgstr ""
 

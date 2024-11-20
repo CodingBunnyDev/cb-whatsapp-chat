@@ -12,7 +12,9 @@ function coding_bunny_pulsante_whatsapp() {
     $phone_number = sanitize_text_field( get_option( 'coding_bunny_whatsapp_phone', '1234567890' ) ); // Phone number
     $message = sanitize_text_field( get_option( 'coding_bunny_whatsapp_message', 'Ciao! Vorrei maggiori informazioni su' ) ); // Default message
     $position = sanitize_text_field( get_option( 'coding_bunny_whatsapp_position', 'right' ) ); // Button position
+	$vertical_position = intval( get_option( 'coding_bunny_whatsapp_vertical_position', 20 ) ); // Button vertical position
     $icon_size = intval( get_option( 'coding_bunny_whatsapp_icon_size', 48 ) ); // Button size
+	$icon_shadow = floatval( get_option( 'coding_bunny_whatsapp_icon_shadow', 0 ) ); // Button shadow
     $show_on_desktop = sanitize_text_field( get_option( 'coding_bunny_whatsapp_show_on_desktop', 'no' ) ); // Show on desktop setting
     $icon_type = sanitize_text_field( get_option( 'coding_bunny_whatsapp_icon_type', 'dmm-simple-icon.svg' ) ); // Icon type
     $time_settings = get_option( 'coding_bunny_whatsapp_time_settings', [] ); // Time settings for each day
@@ -52,12 +54,12 @@ function coding_bunny_pulsante_whatsapp() {
            .coding-bunny-whatsapp {
                 display: block; /* Make the button a block element */
                 position: fixed; /* Fix the button position */
-                bottom: 20px; /* Distance from the bottom */
+                bottom: <?php echo esc_attr( $vertical_position ); ?>px; /* Distance from the bottom */
                 <?php echo esc_attr( $position ); ?>: 20px; /* Set the side position (left or right) */
                 width: <?php echo esc_attr( $icon_size ); ?>px; /* Width of the button */
                 height: <?php echo esc_attr( $icon_size ); ?>px; /* Height of the button */
-                border-radius: 50%; /* Make it circular */
                 z-index: 99; /* Ensure it appears above other elements */
+			    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, <?php echo esc_attr( $icon_shadow ); ?>));
             }
 
            .coding-bunny-whatsapp:hover {

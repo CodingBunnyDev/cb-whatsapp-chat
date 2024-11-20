@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Define the plugin version
-define( 'CODING_BUNNY_WHATSAPP_CHAT_VERSION', '1.1.0' );
+define( 'CODING_BUNNY_WHATSAPP_CHAT_VERSION', '1.2.0' );
 
 // Function to add a submenu item for licence validation
 function coding_bunny_whatsapp_submenu() {
