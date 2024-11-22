@@ -3,7 +3,7 @@
 ![License: GPL v3](https://img.shields.io/badge/license-GPL%20v3-blue.svg)
 ![WordPress Version](https://img.shields.io/badge/WordPress-%3E%3D%206.0-blue.svg)
 ![PHP Version](https://img.shields.io/badge/PHP-%3E%3D%208.0-orange.svg)
-![Version](https://img.shields.io/badge/version-1.1.0-green.svg)
+![Version](https://img.shields.io/badge/version-1.2.0-green.svg)
 
 **CodingBunny WhatsApp Chat** is a WordPress plugin that allows visitors to contact you via WhatsApp with a single click. This user-friendly plugin adds a WhatsApp chat button to your site, making it easy for users to reach you. An optional PRO version adds advanced features for enhanced user interaction.
 
